@@ -23,6 +23,7 @@ public class Main {
 	    editSecond();
         System.out.println(Blist);
         findMostPop();
+        isThereMoreThan35();
     }
 
     public static void add2() {
@@ -82,7 +83,6 @@ public class Main {
     }
 
     public static void findMostPop() {
-        boolean found = false;
         Integer i = 1;
         Bejegyzes max = Blist.get(0);
         while(i != Blist.size() ) {
@@ -91,7 +91,22 @@ public class Main {
             }
             i++;
         }
-
         System.out.println("A legnépszerűbb bejegyzes " + max.getLikeok() + " likeot kapott");
+    }
+
+    public static void isThereMoreThan35() {
+        boolean found = false;
+        Integer i = 0;
+        String retString = "Nincs 35nél több lajkot kapott bejegyzes";
+
+        while(i != Blist.size() || !found) {
+            if (Blist.get(i).getLikeok() > 35) {
+                found = true;
+                retString = "Van 35nél több lajkot kapott bejegyzes";
+            }
+            i++;
+        }
+
+        System.out.println(retString);
     }
 }
