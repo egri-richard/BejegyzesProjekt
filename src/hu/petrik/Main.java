@@ -22,6 +22,7 @@ public class Main {
 	    assignLikes();
 	    editSecond();
         System.out.println(Blist);
+        findMostPop();
     }
 
     public static void add2() {
@@ -78,5 +79,19 @@ public class Main {
 
         System.out.println("Új tartalom");
         Blist.get(1).setTartalom(scan.next());
+    }
+
+    public static void findMostPop() {
+        boolean found = false;
+        Integer i = 1;
+        Bejegyzes max = Blist.get(0);
+        while(i != Blist.size() ) {
+            if (Blist.get(i).getLikeok() > max.getLikeok()) {
+                max = Blist.get(i);
+            }
+            i++;
+        }
+
+        System.out.println("A legnépszerűbb bejegyzes " + max.getLikeok() + " likeot kapott");
     }
 }
