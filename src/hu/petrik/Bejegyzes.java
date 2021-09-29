@@ -50,10 +50,10 @@ public class Bejegyzes {
     public String toString() {
         String retString;
         if (this.szerkesztve == this.letrejott) {
-            retString = this.szerzo +" - "+ this.likeok +" - "+this.letrejott +"\n"+
+            retString = "\n"+ this.szerzo +" - "+ this.likeok +" - "+this.letrejott +"\n"+
                         this.tartalom;
         } else {
-            retString = this.szerzo +" - "+ this.likeok +" - "+this.letrejott +"\n"+
+            retString = "\n"+ this.szerzo +" - "+ this.likeok +" - "+this.letrejott +"\n"+
                         "Szerkesztve: " + this.szerkesztve +"\n"+
                         this.tartalom;
         }
