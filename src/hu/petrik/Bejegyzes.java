@@ -2,6 +2,7 @@ package hu.petrik;
 
 import java.time.DateTimeException;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Bejegyzes {
     private String szerzo;
@@ -48,12 +49,13 @@ public class Bejegyzes {
 
     @Override
     public String toString() {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-mm-dd hh:mm:ss");
         String retString;
-        if (this.szerkesztve == this.letrejott) {
-            retString = "\n"+ this.szerzo +" - "+ this.likeok +" - "+this.letrejott +"\n"+
+        if (this.szerkesztve.equals(this.letrejott)) {
+            retString = "\n"+ this.szerzo +" - "+ this.likeok +" - "+this.letrejott.format(format) +"\n"+
                         this.tartalom;
         } else {
-            retString = "\n"+ this.szerzo +" - "+ this.likeok +" - "+this.letrejott +"\n"+
+            retString = "\n"+ this.szerzo +" - "+ this.likeok +" - "+this.letrejott.format(format) +"\n"+
                         "Szerkesztve: " + this.szerkesztve +"\n"+
                         this.tartalom;
         }
