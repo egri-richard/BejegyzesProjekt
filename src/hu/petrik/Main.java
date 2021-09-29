@@ -1,9 +1,6 @@
 package hu.petrik;
 
-import java.io.BufferedReader;
-import java.io.Console;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -126,14 +123,12 @@ public class Main {
 
     public static void orderAsc() {
         for(int i=1; i < Blist.size(); i++) {
-
             for (int j=1; j < Blist.size(); j++) {
                 if (Blist.get(j).getLikeok() > Blist.get(j - 1).getLikeok()) {
                     Bejegyzes temp = Blist.get(j - 1);
                     Blist.set(j - 1, Blist.get(j));
                     Blist.set(j, temp);
                 }
-
             }
         }
     }
