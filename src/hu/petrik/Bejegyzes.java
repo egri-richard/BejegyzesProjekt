@@ -23,6 +23,10 @@ public class Bejegyzes {
         return this.szerzo;
     }
 
+    public void setSzerzo(String szerzo) {
+        this.szerzo = szerzo;
+    }
+
     public String getTartalom() {
         return this.tartalom;
     }

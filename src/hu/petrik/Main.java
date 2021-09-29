@@ -20,6 +20,7 @@ public class Main {
 	    addCustom();
 	    addFromFile();
 	    assignLikes();
+	    editSecond();
         System.out.println(Blist);
     }
 
@@ -68,5 +69,14 @@ public class Main {
         for (int i = 0; i < (Blist.size() * 20); i++) {
             Blist.get(rnd.nextInt(Blist.size())).plusLike();
         }
+    }
+
+    public static void editSecond() {
+        System.out.println("Változtathat a második bejegyzésben: ");
+        System.out.println("Új Szerző: ");
+        Blist.get(1).setSzerzo(scan.next());
+
+        System.out.println("Új tartalom");
+        Blist.get(1).setTartalom(scan.next());
     }
 }
