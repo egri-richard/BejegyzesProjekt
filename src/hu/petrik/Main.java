@@ -25,6 +25,8 @@ public class Main {
         findMostPop();
         isThereMoreThan35();
         howManyBelow15();
+        orderAsc();
+        System.out.println(Blist);
     }
 
     public static void add2() {
@@ -120,5 +122,19 @@ public class Main {
         }
 
         System.out.println(count + " poszt kapott 15nél kevesebb lájkot");
+    }
+
+    public static void orderAsc() {
+        for(int i=1; i < Blist.size(); i++) {
+
+            for (int j=1; j < Blist.size(); j++) {
+                if (Blist.get(j).getLikeok() > Blist.get(j - 1).getLikeok()) {
+                    Bejegyzes temp = Blist.get(j - 1);
+                    Blist.set(j - 1, Blist.get(j));
+                    Blist.set(j, temp);
+                }
+
+            }
+        }
     }
 }
