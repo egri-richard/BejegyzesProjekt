@@ -24,6 +24,7 @@ public class Main {
         System.out.println(Blist);
         findMostPop();
         isThereMoreThan35();
+        howManyBelow15();
     }
 
     public static void add2() {
@@ -99,14 +100,25 @@ public class Main {
         Integer i = 0;
         String retString = "Nincs 35nél több lajkot kapott bejegyzes";
 
-        while(i != Blist.size() || !found) {
+        while(i < Blist.size()) {
             if (Blist.get(i).getLikeok() > 35) {
-                found = true;
                 retString = "Van 35nél több lajkot kapott bejegyzes";
             }
             i++;
         }
 
         System.out.println(retString);
+    }
+
+    public static void howManyBelow15() {
+        Integer count = 0;
+        Integer i = 0;
+
+        while(i < Blist.size()) {
+            if (Blist.get(i).getLikeok() < 15) count++;
+            i++;
+        }
+
+        System.out.println(count + " poszt kapott 15nél kevesebb lájkot");
     }
 }
